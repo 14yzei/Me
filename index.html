@@ -6,48 +6,56 @@
     <title>About Me</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             background-color: #000000; /* Black background */
             color: white; /* White text */
             margin: 0;
             padding: 0;
+            text-align: center;
         }
         header {
-            background-color: #333; /* Dark gray header */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #222; /* Dark background */
             color: white;
-            padding: 20px;
-            text-align: center;
+            padding: 15px 0;
+            font-size: 24px;
+            z-index: 10;
+        }
+        header h1 {
+            margin: 0;
         }
         section {
-            padding: 20px;
-        }
-        h2 {
-            color: #4CAF50; /* Green color for headings */
+            margin-top: 80px; /* To prevent content from hiding behind the fixed header */
+            padding: 50px;
         }
         .content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            margin-top: 30px;
+            font-size: 20px;
+            line-height: 1.6;
         }
         .info {
-            flex: 1;
-            margin: 10px;
+            background-color: #333; /* Slightly lighter black background */
+            border-radius: 10px;
             padding: 20px;
-            background-color: #222; /* Dark background for content box */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
         }
         .info img {
-            width: 100%;
-            max-width: 200px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         footer {
-            text-align: center;
-            background-color: #333;
-            color: white;
             padding: 10px;
+            background-color: #222;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -58,15 +66,13 @@
     </header>
 
     <section>
-        <div class="content">
-            <div class="info">
-                <img src="your-photo.jpg" alt="Your photo">
-                <h2>Hi, I'm [Your Name]</h2>
-                <p>Welcome to my personal page. I'm passionate about [Your Interests]. In my free time, I love [Your Hobbies].</p>
-            </div>
+        <div class="info">
+            <img src="your-photo.jpg" alt="Your photo">
+            <h2>Hi, I'm [Your Name]</h2>
+            <p>Welcome to my personal page. I'm passionate about [Your Interests]. In my free time, I love [Your Hobbies].</p>
 
-            <div class="info">
-                <h2>Contact Information</h2>
+            <div class="content">
+                <h3>Contact Information</h3>
                 <p><strong>Email:</strong> your-email@example.com</p>
                 <p><strong>Phone:</strong> (123) 456-7890</p>
             </div>

@@ -1,26 +1,81 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Website About Us Page HTML CSS</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <section class="about-us">
-      <div class="about">
-        <img src="girl.jpg" class="pic" />
-        <div class="text">
-          <h2>About Us</h2>
-          <h5>Front-end Developer & <span>Designer</span></h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus ad sed harum itaque ullam enim quas, veniam accusantium, quia animi id eos adipisci iusto molestias asperiores explicabo cum vero atque amet corporis! Soluta illum facere consequuntur magni. Ullam dolorem repudiandae cumque voluptate consequatur consectetur, eos provident necessitatibus reiciendis corrupti!</p>
-          <div class="data">
-            <a href="#" class="hire">Hire Me</a>
-          </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Black background */
+            color: white; /* White text */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333; /* Dark gray header */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        h2 {
+            color: #4CAF50; /* Green color for headings */
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .info {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #222; /* Dark background for content box */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+        .info img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About Me</h1>
+    </header>
+
+    <section>
+        <div class="content">
+            <div class="info">
+                <img src="your-photo.jpg" alt="Your photo">
+                <h2>Hi, I'm [Your Name]</h2>
+                <p>Welcome to my personal page. I'm passionate about [Your Interests]. In my free time, I love [Your Hobbies].</p>
+            </div>
+
+            <div class="info">
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> your-email@example.com</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+            </div>
         </div>
-      </div>
     </section>
-  </body>
+
+    <footer>
+        <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>

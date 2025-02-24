@@ -1,87 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #000000; /* Black background */
-            color: white; /* White text */
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #222; /* Dark background */
-            color: white;
-            padding: 15px 0;
-            font-size: 24px;
-            z-index: 10;
-        }
-        header h1 {
-            margin: 0;
-        }
-        section {
-            margin-top: 80px; /* To prevent content from hiding behind the fixed header */
-            padding: 50px;
-        }
-        .content {
-            margin-top: 30px;
-            font-size: 20px;
-            line-height: 1.6;
-        }
-        .info {
-            background-color: #333; /* Slightly lighter black background */
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .info img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-        footer {
-            padding: 10px;
-            background-color: #222;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>stdrice</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <style>
+            body {
+                max-width: 100em; 
+                width: 100%; 
+                height: 100%; 
+                position: absolute; 
+                display: table; 
+            }
+            p {
+                display: table-cell; 
+                vertical-align: middle; 
+                text-align: center; 
+            }
+          </style>
+    </head>
 
-    <header>
-        <h1>About Me</h1>
-    </header>
-
-    <section>
-        <div class="info">
-            <img src="your-photo.jpg" alt="Your photo">
-            <h2>Hi, I'm [Your Name]</h2>
-            <p>Welcome to my personal page. I'm passionate about [Your Interests]. In my free time, I love [Your Hobbies].</p>
-
-            <div class="content">
-                <h3>Contact Information</h3>
-                <p><strong>Email:</strong> your-email@example.com</p>
-                <p><strong>Phone:</strong> (123) 456-7890</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 [Your Name]. All rights reserved.</p>
-    </footer>
-
-</body>
+    <body>
+        <p>
+            <i>s t d r i c e</i>
+            <br>
+            <br>
+            <img id="album-art" src="placeholder.png" width="300px" height="300px" onerror="this.src='assets/images/1.png'">
+            <br>
+            <span id="artist-name"></span> - <span id="song-name"><a href="#" target="_blank"></a></span>
+            <br>
+            <br>
+            <a href="about.html">about</a> - 
+            <a href="projects.html">projects</a> - 
+            <a href="https://stdrice.bearblog.dev">blogs</a> - 
+            <a href="webrings.html">webrings</a>
+        </p>
+    </body>
+    
+    <script>
+      async function fetchLastPlayedSong() {
+      const username = 'p3nguin-kun';
+      const apiKey = '731cd3d44373636d778c07f281813808'; // please dont make any unauthorized usage with my api ;-;
+      const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json`;
+        
+      try {
+          const response = await fetch(url);
+          const data = await response.json();
+          const track = data.recenttracks.track[0];
+        
+          // Update HTML
+          document.getElementById('album-art').src = track.image[3]['#text'] || 'placeholder.png';
+          const songNameElement = document.getElementById('song-name').querySelector('a');
+          songNameElement.textContent = track.name || 'Unknown Song';
+          songNameElement.href = track.url || '#';
+        
+          document.getElementById('artist-name').textContent = track.artist['#text'] || 'Unknown Artist';
+          document.getElementById('album-name').textContent = track.album['#text'] || 'Unknown Album';
+          } catch (error) {
+              console.error('Error fetching song data:', error);
+            }
+        }
+        
+        // Fetch song data on load
+        fetchLastPlayedSong();
+        
+        // Optionally refresh every 60 seconds
+        setInterval(fetchLastPlayedSong, 60000);
+    </script>
 </html>

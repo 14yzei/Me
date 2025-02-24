@@ -1,70 +1,81 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>stdrice</title>
-        <link rel="stylesheet" href="style.css" type="text/css">
-        <style>
-            body {
-                max-width: 100em; 
-                width: 100%; 
-                height: 100%; 
-                position: absolute; 
-                display: table; 
-            }
-            p {
-                display: table-cell; 
-                vertical-align: middle; 
-                text-align: center; 
-            }
-          </style>
-    </head>
-
-    <body>
-        <p>
-            <i>s t d r i c e</i>
-            <br>
-            <br>
-            <img id="album-art" src="placeholder.png" width="300px" height="300px" onerror="this.src='assets/images/1.png'">
-            <br>
-            <span id="artist-name"></span> - <span id="song-name"><a href="#" target="_blank"></a></span>
-            <br>
-            <br>
-            <a href="about.html">about</a> - 
-            <a href="projects.html">projects</a> - 
-            <a href="https://stdrice.bearblog.dev">blogs</a> - 
-            <a href="webrings.html">webrings</a>
-        </p>
-    </body>
-    
-    <script>
-      async function fetchLastPlayedSong() {
-      const username = 'p3nguin-kun';
-      const apiKey = '731cd3d44373636d778c07f281813808'; // please dont make any unauthorized usage with my api ;-;
-      const url = `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json`;
-        
-      try {
-          const response = await fetch(url);
-          const data = await response.json();
-          const track = data.recenttracks.track[0];
-        
-          // Update HTML
-          document.getElementById('album-art').src = track.image[3]['#text'] || 'placeholder.png';
-          const songNameElement = document.getElementById('song-name').querySelector('a');
-          songNameElement.textContent = track.name || 'Unknown Song';
-          songNameElement.href = track.url || '#';
-        
-          document.getElementById('artist-name').textContent = track.artist['#text'] || 'Unknown Artist';
-          document.getElementById('album-name').textContent = track.album['#text'] || 'Unknown Album';
-          } catch (error) {
-              console.error('Error fetching song data:', error);
-            }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000; /* Black background */
+            color: white; /* White text */
+            margin: 0;
+            padding: 0;
         }
-        
-        // Fetch song data on load
-        fetchLastPlayedSong();
-        
-        // Optionally refresh every 60 seconds
-        setInterval(fetchLastPlayedSong, 60000);
-    </script>
+        header {
+            background-color: #333; /* Dark gray header */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        h2 {
+            color: #4CAF50; /* Green color for headings */
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .info {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #222; /* Dark background for content box */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+        .info img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About Me</h1>
+    </header>
+
+    <section>
+        <div class="content">
+            <div class="info">
+                <img src="your-photo.jpg" alt="Your photo">
+                <h2>Hi, I'm [Your Name]</h2>
+                <p>Welcome to my personal page. I'm passionate about [Your Interests]. In my free time, I love [Your Hobbies].</p>
+            </div>
+
+            <div class="info">
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> your-email@example.com</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>

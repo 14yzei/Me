@@ -5,18 +5,19 @@
         <title>zein</title>
         <link rel="stylesheet" href="style.css" type="text/css">
         <style>
-            /* Body styling to center everything */
+            /* Body styling to position content with a little margin from the top */
             body {
                 max-width: 100em; 
                 width: 100%; 
                 height: 100vh; /* Full height */
-                display: flex; /* Flexbox for centering */
+                display: flex; /* Flexbox for centering content horizontally */
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
+                justify-content: flex-start; /* Align items to the top */
+                align-items: center; /* Center items horizontally */
                 background-color: #000;
                 color: white;
                 margin: 0; /* Remove default margin */
+                padding-top: 50px; /* Adjust this to move content down from the top */
             }
 
             p {

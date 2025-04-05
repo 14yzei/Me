@@ -34,9 +34,9 @@ li {
     margin-bottom: 10px;
 }
 
-/* Bolded text in list */
+/* Bolded text in list (now white) */
 b {
-    color: #FFCC00;
+    color: white;
 }
 
 /* Code styling */

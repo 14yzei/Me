@@ -34,8 +34,8 @@ li {
     margin-bottom: 10px;
 }
 
-/* Bolded text in list (forcefully set to white) */
-b, strong {
+/* Specific bolded text inside "Music" and "Anime" lists (forcefully white) */
+ul li b, ul li strong {
     color: white !important;
 }
 

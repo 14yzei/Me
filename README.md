@@ -1,3 +1,2 @@
-## Me
-- provide all about me 
-- game , music . everyone except adress
+# the website not here 
+- for some reasons you can connect with this link impossible

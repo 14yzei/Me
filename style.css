@@ -186,6 +186,6 @@ label, legend, fieldset {
 
 .p-center {
     display: table-cell; 
-    vertical-align: middle; 
+    vertical-align: left; 
     text-align: left;
 }

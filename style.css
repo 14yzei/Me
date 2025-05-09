@@ -189,3 +189,8 @@ label, legend, fieldset {
     vertical-align: left; 
     text-align: left;
 }
+
+body{
+    background-image: url("https://i.pinimg.com/736x/ed/34/c3/ed34c3dbfc46e7b44a434de758e8f79c.jpg");
+    background-size: cover;
+}

@@ -135,7 +135,7 @@ textarea {
 .button, button, input[type=submit], input[type=reset], input[type=button], input[type=file]::file-selector-button {
   display: inline-block;
   padding: 5px 10px;
-  text-align: left;
+  text-align: center;
   text-decoration: none;
   white-space: nowrap;
   background-color: #ffffff;
@@ -187,5 +187,5 @@ label, legend, fieldset {
 .p-center {
     display: table-cell; 
     vertical-align: middle; 
-    text-align: center;
+    text-align: left;
 }
